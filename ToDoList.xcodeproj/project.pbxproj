@@ -3,25 +3,33 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		4C6827F22203AD4F003ACC78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6827F12203AD4F003ACC78 /* AppDelegate.swift */; };
-		4C6827F42203AD4F003ACC78 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6827F32203AD4F003ACC78 /* ViewController.swift */; };
 		4C6827F72203AD4F003ACC78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C6827F52203AD4F003ACC78 /* Main.storyboard */; };
 		4C6827F92203AD50003ACC78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C6827F82203AD50003ACC78 /* Assets.xcassets */; };
 		4C6827FC2203AD50003ACC78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C6827FA2203AD50003ACC78 /* LaunchScreen.storyboard */; };
+		4C6828052203AE07003ACC78 /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6828042203AE07003ACC78 /* ToDo.swift */; };
+		4C6828092203AECB003ACC78 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6828082203AECB003ACC78 /* Const.swift */; };
+		4C68280B2203F8BA003ACC78 /* ToDoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C68280A2203F8BA003ACC78 /* ToDoTableViewController.swift */; };
+		4C68280D2203F8E0003ACC78 /* ToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C68280C2203F8E0003ACC78 /* ToDoViewController.swift */; };
+		4C8CEEAC2205EA8800690F4B /* ToDoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8CEEAB2205EA8800690F4B /* ToDoCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4C6827EE2203AD4F003ACC78 /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C6827F12203AD4F003ACC78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4C6827F32203AD4F003ACC78 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4C6827F62203AD4F003ACC78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4C6827F82203AD50003ACC78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C6827FB2203AD50003ACC78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4C6827FD2203AD50003ACC78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C6828042203AE07003ACC78 /* ToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
+		4C6828082203AECB003ACC78 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		4C68280A2203F8BA003ACC78 /* ToDoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableViewController.swift; sourceTree = "<group>"; };
+		4C68280C2203F8E0003ACC78 /* ToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoViewController.swift; sourceTree = "<group>"; };
+		4C8CEEAB2205EA8800690F4B /* ToDoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +62,42 @@
 		4C6827F02203AD4F003ACC78 /* ToDoList */ = {
 			isa = PBXGroup;
 			children = (
+				4C8CEEAE2205EA9C00690F4B /* Controller */,
+				4C8CEEAD2205EA9100690F4B /* View */,
+				4C6828032203ADFA003ACC78 /* Model */,
 				4C6827F12203AD4F003ACC78 /* AppDelegate.swift */,
-				4C6827F32203AD4F003ACC78 /* ViewController.swift */,
 				4C6827F52203AD4F003ACC78 /* Main.storyboard */,
 				4C6827F82203AD50003ACC78 /* Assets.xcassets */,
 				4C6827FA2203AD50003ACC78 /* LaunchScreen.storyboard */,
 				4C6827FD2203AD50003ACC78 /* Info.plist */,
+				4C6828082203AECB003ACC78 /* Const.swift */,
 			);
 			path = ToDoList;
+			sourceTree = "<group>";
+		};
+		4C6828032203ADFA003ACC78 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4C6828042203AE07003ACC78 /* ToDo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4C8CEEAD2205EA9100690F4B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4C8CEEAB2205EA8800690F4B /* ToDoCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4C8CEEAE2205EA9C00690F4B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4C68280A2203F8BA003ACC78 /* ToDoTableViewController.swift */,
+				4C68280C2203F8E0003ACC78 /* ToDoViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -100,7 +136,7 @@
 				};
 			};
 			buildConfigurationList = 4C6827E92203AD4F003ACC78 /* Build configuration list for PBXProject "ToDoList" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -135,8 +171,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C6827F42203AD4F003ACC78 /* ViewController.swift in Sources */,
+				4C68280D2203F8E0003ACC78 /* ToDoViewController.swift in Sources */,
+				4C8CEEAC2205EA8800690F4B /* ToDoCell.swift in Sources */,
+				4C6828052203AE07003ACC78 /* ToDo.swift in Sources */,
+				4C68280B2203F8BA003ACC78 /* ToDoTableViewController.swift in Sources */,
 				4C6827F22203AD4F003ACC78 /* AppDelegate.swift in Sources */,
+				4C6828092203AECB003ACC78 /* Const.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
