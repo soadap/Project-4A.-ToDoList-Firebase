@@ -107,7 +107,7 @@
                                                     </connections>
                                                 </button>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QDr-t1-5VZ">
-                                                    <rect key="frame" x="60" y="7" width="299" height="30"/>
+                                                    <rect key="frame" x="60" y="7" width="263" height="30"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -116,12 +116,25 @@
                                                         <action selector="textEditChanges:" destination="Gr9-ux-06p" eventType="editingChanged" id="Kvl-m2-OIa"/>
                                                     </connections>
                                                 </textField>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kMb-8z-yYi">
+                                                    <rect key="frame" x="331" y="4" width="36" height="36"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="36" id="JjZ-xI-HJP"/>
+                                                        <constraint firstAttribute="height" constant="36" id="eVn-V2-eOv"/>
+                                                    </constraints>
+                                                    <state key="normal" image="share-512"/>
+                                                    <connections>
+                                                        <action selector="shareButtonTapped:" destination="Gr9-ux-06p" eventType="touchUpInside" id="oGg-ze-aBJ"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="aMO-19-CbV" firstAttribute="leading" secondItem="aBp-m0-wJL" secondAttribute="leadingMargin" id="Csj-un-hTl"/>
                                                 <constraint firstItem="QDr-t1-5VZ" firstAttribute="centerY" secondItem="aBp-m0-wJL" secondAttribute="centerY" id="GZn-E1-DX9"/>
                                                 <constraint firstItem="aMO-19-CbV" firstAttribute="centerY" secondItem="aBp-m0-wJL" secondAttribute="centerY" id="Lgj-uv-XJJ"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="QDr-t1-5VZ" secondAttribute="trailing" id="QpR-Oh-net"/>
+                                                <constraint firstItem="kMb-8z-yYi" firstAttribute="leading" secondItem="QDr-t1-5VZ" secondAttribute="trailing" constant="8" id="Tcs-Ej-VZH"/>
+                                                <constraint firstItem="kMb-8z-yYi" firstAttribute="centerY" secondItem="aBp-m0-wJL" secondAttribute="centerY" id="Wb1-JP-JZV"/>
+                                                <constraint firstAttribute="trailing" secondItem="kMb-8z-yYi" secondAttribute="trailing" constant="8" id="bq1-hU-EWW"/>
                                                 <constraint firstItem="QDr-t1-5VZ" firstAttribute="leading" secondItem="aMO-19-CbV" secondAttribute="trailing" constant="8" id="py3-oL-Ege"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -222,6 +235,7 @@
                         <outlet property="isCompleteButton" destination="aMO-19-CbV" id="1Yc-Hl-5fN"/>
                         <outlet property="notesTextView" destination="crj-cn-X7x" id="aER-TN-hAy"/>
                         <outlet property="saveButton" destination="lOn-W7-2eH" id="grB-he-2DY"/>
+                        <outlet property="shareButton" destination="kMb-8z-yYi" id="QCA-Qx-zLb"/>
                         <outlet property="titleTextField" destination="QDr-t1-5VZ" id="2Oy-Rv-Xca"/>
                     </connections>
                 </tableViewController>
@@ -266,6 +280,7 @@
     <resources>
         <image name="Checked" width="44" height="44"/>
         <image name="Unchecked" width="44" height="44"/>
+        <image name="share-512" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="lyO-SM-Ou9"/>

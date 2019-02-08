@@ -10,12 +10,18 @@ import UIKit
 
 class ToDoTableViewController: UITableViewController, ToDoCellDelegate {
 
+    var todos = [ToDo]()
+    var filteredTodos = [ToDo]()
+    
+    let searchController = UISearchController(searchResultsController: nil)
+    
     func checkmarkTapped(sender: ToDoCell) {
         if let indexPath = tableView.indexPath(for: sender) {
             var todo = todos[indexPath.row]
             todo.isComplete = !todo.isComplete
             todos[indexPath.row] = todo
             tableView.reloadRows(at: [indexPath], with: .automatic)
+            ToDo.saveToDos(todos)
         }
     }
     
@@ -35,12 +41,17 @@ class ToDoTableViewController: UITableViewController, ToDoCellDelegate {
 
             }
         }
+        ToDo.saveToDos(todos)
     }
-    
-    var todos = [ToDo]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
         
         if let savedToDos = ToDo.loadToDos() {
             todos = savedToDos
@@ -51,14 +62,15 @@ class ToDoTableViewController: UITableViewController, ToDoCellDelegate {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return todos.count
+        return !isFiltering() ? todos.count : filteredTodos.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let todoTable = !isFiltering() ? todos : filteredTodos
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CELL_IDENTIFIER) as? ToDoCell else {
             fatalError("Could not degueue a cell.")
         }
-        let todo = todos[indexPath.row]
+        let todo = todoTable[indexPath.row]
         cell.titleLabel?.text = todo.title
         cell.isCompleteButton.isSelected = todo.isComplete
         cell.delegate = self
@@ -73,6 +85,7 @@ class ToDoTableViewController: UITableViewController, ToDoCellDelegate {
         if editingStyle == .delete {
             todos.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            ToDo.saveToDos(todos)
         }
     }
     
@@ -85,5 +98,26 @@ class ToDoTableViewController: UITableViewController, ToDoCellDelegate {
             
         }
     }
+
+    func searchBarIsEmpty() -> Bool {
+        return searchController.searchBar.text?.isEmpty ?? true
+    }
     
+    func filteredContentForSearch(_ searchText: String, scope: String = "All") {
+        filteredTodos = todos.filter({ (todo: ToDo) -> Bool in
+            return todo.title.lowercased().contains(searchText.lowercased())
+        })
+        
+        tableView.reloadData()
+    }
+    
+    func isFiltering() -> Bool {
+        return searchController.isActive && !searchBarIsEmpty()
+    }
+}
+
+extension ToDoTableViewController : UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        filteredContentForSearch(searchController.searchBar.text!)
+    }
 }

@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MessageUI
 
-class ToDoViewController: UITableViewController {
+class ToDoViewController: UITableViewController, MFMailComposeViewControllerDelegate {
 
     @IBOutlet weak var titleTextField : UITextField!
     @IBOutlet weak var isCompleteButton : UIButton!
@@ -17,6 +18,7 @@ class ToDoViewController: UITableViewController {
     @IBOutlet weak var notesTextView : UITextView!
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var shareButton: UIButton!
     
     var isDatePickerHidden = true
     var todo : ToDo?
@@ -87,6 +89,7 @@ class ToDoViewController: UITableViewController {
     func updateSaveButtonState() {
         let text = titleTextField.text ?? ""
         saveButton.isEnabled = !text.isEmpty
+        shareButton.isEnabled = !text.isEmpty
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -98,5 +101,31 @@ class ToDoViewController: UITableViewController {
         let notes = notesTextView.text
         
         todo = ToDo(title: title, isComplete: isComlete,  dueDate: dueDate, notes: notes)
+    }
+    
+    @IBAction func shareButtonTapped(_ sender: Any) {
+        sendMail()
+    }
+    
+    func sendMail() {
+        if MFMailComposeViewController.canSendMail() {
+            let mail = MFMailComposeViewController()
+            mail.mailComposeDelegate = self
+            var mailContent = ("<p>\(titleTextField.text!)<p>")
+            mailContent += isCompleteButton.isSelected ? ("<p>Completed!<p>") : ("<p>Not completed!<p>")
+            mailContent += ("<p>Due date:<br>\(ToDo.dueDateFormatter.string(from: dueDatePicker.date))<p>")
+            if notesTextView.text != "" {
+                mailContent += ("<p>Notes:<br>\(notesTextView.text!)<p>")
+            }
+            mail.setMessageBody(mailContent, isHTML: true)
+            
+            present(mail, animated: true)
+        } else {
+            print("Can't send a message.")
+        }
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
     }
 }
