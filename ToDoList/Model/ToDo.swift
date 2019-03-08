@@ -9,7 +9,7 @@
 import Foundation
 import Firebase
 
-struct ToDo : Codable {
+struct ToDo : Codable, Comparable {
     
     static let DocumentsDirectory = FileManager.default.urls(for: .documentDirectory,in: .userDomainMask).first!
     static let ArchiveURL = DocumentsDirectory.appendingPathComponent("todos").appendingPathExtension("plist")
@@ -72,5 +72,13 @@ struct ToDo : Codable {
             "notes" : self.notes,
             "dueDate" : self.dueDate
         ]
+    }
+    
+    static func < (todo1: ToDo, todo2: ToDo) -> Bool {
+        if todo1.isComplete != todo2.isComplete {
+            if !todo1.isComplete {return true} else {return false}
+        } else {
+            return todo1.dueDate < todo2.dueDate
+        }
     }
 }

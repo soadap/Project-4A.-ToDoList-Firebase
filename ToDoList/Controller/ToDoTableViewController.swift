@@ -20,8 +20,10 @@ class ToDoTableViewController: UITableViewController, ToDoCellDelegate {
             var todo = todos[indexPath.row]
             todo.isComplete = !todo.isComplete
             todos[indexPath.row] = todo
+            Service.updateToDoFirebase(todos[indexPath.row])
             tableView.reloadRows(at: [indexPath], with: .automatic)
             ToDo.saveToDos(todos)
+            updateUI()
         }
     }
     
@@ -44,6 +46,7 @@ class ToDoTableViewController: UITableViewController, ToDoCellDelegate {
             }
         }
         ToDo.saveToDos(todos)
+        updateUI()
     }
     
     override func viewDidLoad() {
@@ -73,7 +76,7 @@ class ToDoTableViewController: UITableViewController, ToDoCellDelegate {
     
     func updateDownloadedTodos() {
         todos = Service.downloadedTodo
-        tableView.reloadData()
+        updateUI()
     }
 
     
@@ -98,7 +101,7 @@ class ToDoTableViewController: UITableViewController, ToDoCellDelegate {
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
+        if editingStyle == .delete && !isFiltering() {
             Service.deleteFromFirebase(todos[indexPath.row])
             todos.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
@@ -110,7 +113,7 @@ class ToDoTableViewController: UITableViewController, ToDoCellDelegate {
         if segue.identifier == SHOW_DETAILS_SEGUE {
             let todoViewController = segue.destination as? ToDoViewController
             let indexPath = tableView.indexPathForSelectedRow!
-            let selectedTodo = todos[indexPath.row]
+            let selectedTodo = !isFiltering() ? todos[indexPath.row] : filteredTodos[indexPath.row]
             todoViewController?.todo = selectedTodo
             
         }
@@ -124,12 +127,17 @@ class ToDoTableViewController: UITableViewController, ToDoCellDelegate {
         filteredTodos = todos.filter({ (todo: ToDo) -> Bool in
             return todo.title.lowercased().contains(searchText.lowercased())
         })
-        
-        tableView.reloadData()
+        updateUI()
     }
     
     func isFiltering() -> Bool {
         return searchController.isActive && !searchBarIsEmpty()
+    }
+    
+    func updateUI() {
+        todos.sort()
+        filteredTodos.sort()
+        tableView.reloadData()
     }
 }
 
