@@ -14,12 +14,13 @@ Screenshoots:
 Description: To Do List Application.
 Added all recommended features from "Strech Goal" section:
 
-- added Firebase
+- added Firebase authentification and database usage
 - added sidemenu
+- added sorting functionality
 - added the ability to share the details of an item using the Mail app.
 - added a search field at the top of your list that allows the user to filter a large list of items by specifying a portion of the item's title.
 
 <b><i>// Network connection is required for work.</i></b>
 Offline mode needs to be added.
 
-Technologies Used: Interface Builder, Foundation & UIKIt, TableView Swift, Firebase, Xcode
+Technologies Used: Interface Builder, Foundation & UIKIt, Protocols, TableView Swift, Firebase, Xcode
