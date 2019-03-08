@@ -31,14 +31,16 @@ class ToDoTableViewController: UITableViewController, ToDoCellDelegate {
         
         if let todo = sourceViewController.todo {
             if let selectedIndexPath = tableView.indexPathForSelectedRow {
+                let todoID = todos[selectedIndexPath.row].documentID
                 todos[selectedIndexPath.row] = todo
+                todos[selectedIndexPath.row].documentID = todoID
+                Service.updateToDoFirebase(todos[selectedIndexPath.row])
                 tableView.reloadRows(at: [selectedIndexPath], with: .none)
             } else {
                 let newIndexPath = IndexPath(row: todos.count, section: 0)
-    
                 todos.append(todo)
+                todos[newIndexPath.row].documentID = Service.addToDoFirebase(todo)
                 tableView.insertRows(at: [newIndexPath], with: .automatic)
-
             }
         }
         ToDo.saveToDos(todos)
@@ -59,7 +61,21 @@ class ToDoTableViewController: UITableViewController, ToDoCellDelegate {
             todos = ToDo.loadSampleToDo()
         }
         navigationItem.leftBarButtonItem = editButtonItem
+        
+        
+        Service.downloadToDoFromFirebase(self) { (downloaded) in
+            if downloaded {
+                self.updateDownloadedTodos()
+            }
+        }
     }
+    
+    
+    func updateDownloadedTodos() {
+        todos = Service.downloadedTodo
+        tableView.reloadData()
+    }
+
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return !isFiltering() ? todos.count : filteredTodos.count
@@ -83,6 +99,7 @@ class ToDoTableViewController: UITableViewController, ToDoCellDelegate {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            Service.deleteFromFirebase(todos[indexPath.row])
             todos.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             ToDo.saveToDos(todos)
