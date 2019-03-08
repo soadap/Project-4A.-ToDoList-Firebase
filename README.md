@@ -5,10 +5,10 @@ About: My realization of guided project #4 from book "App Development with Swift
 
 Screenshoots:
 <p align="center">
-  <img src="https://github.com/soadap/Project-4A.-ToDoList-Firebase/blob/master/Screenshoots/screenshot1.png?raw=true" width="250" title="ss1">
-  <img src="https://github.com/soadap/Project-4A.-ToDoList-Firebase/blob/master/Screenshoots/screenshot2.png?raw=true" width="250" title="ss2">
-  <img src="https://github.com/soadap/Project-4A.-ToDoList-Firebase/blob/master/Screenshoots/screenshot3.png?raw=true" width="250" title="ss2">
-  <img src="https://github.com/soadap/Project-4A.-ToDoList-Firebase/blob/master/Screenshoots/screenshot4.png?raw=true" width="250" title="ss2">
+  <img src="https://github.com/soadap/Project-4A.-ToDoList-Firebase/blob/master/Screenshoots/screenshot1.png?raw=true" width="200" title="ss1">
+  <img src="https://github.com/soadap/Project-4A.-ToDoList-Firebase/blob/master/Screenshoots/screenshot2.png?raw=true" width="200" title="ss2">
+  <img src="https://github.com/soadap/Project-4A.-ToDoList-Firebase/blob/master/Screenshoots/screenshot3.png?raw=true" width="200" title="ss2">
+  <img src="https://github.com/soadap/Project-4A.-ToDoList-Firebase/blob/master/Screenshoots/screenshot4.png?raw=true" width="200" title="ss2">
 </p>
 
 Description: To Do List Application.
