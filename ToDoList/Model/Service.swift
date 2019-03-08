@@ -39,9 +39,6 @@ class Service {
                 showMessage(err.localizedDescription, controller)
                 return
             } else {
-                querySnapshot?.documents.forEach({ (document) in
-                    print(document.documentID)
-                })
                 Service.downloadedTodo = querySnapshot!.documents.map { (document) -> ToDo in
                     var todo = ToDo(dictionary: document.data())
                     todo.documentID = document.documentID
