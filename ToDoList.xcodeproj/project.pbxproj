@@ -21,6 +21,9 @@
 		4CC5653E220D12EE00F10EF0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4CC5653D220D12EE00F10EF0 /* GoogleService-Info.plist */; };
 		4CC56540220D187000F10EF0 /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC5653F220D187000F10EF0 /* NewUserViewController.swift */; };
 		4CC56542220D235D00F10EF0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC56541220D235D00F10EF0 /* LoginViewController.swift */; };
+		4CEE52BB2231FFFC00245607 /* screenshot1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CEE52B82231FFFC00245607 /* screenshot1.png */; };
+		4CEE52BC2231FFFC00245607 /* screenshot2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CEE52B92231FFFC00245607 /* screenshot2.png */; };
+		4CEE52BD2231FFFC00245607 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4CEE52BA2231FFFC00245607 /* README.md */; };
 		B783AF1E4020775C5074DCB9 /* Pods_ToDoList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 934B9ED5EC8D442BF0B9614F /* Pods_ToDoList.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +44,9 @@
 		4CC5653D220D12EE00F10EF0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4CC5653F220D187000F10EF0 /* NewUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
 		4CC56541220D235D00F10EF0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		4CEE52B82231FFFC00245607 /* screenshot1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screenshot1.png; sourceTree = "<group>"; };
+		4CEE52B92231FFFC00245607 /* screenshot2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screenshot2.png; sourceTree = "<group>"; };
+		4CEE52BA2231FFFC00245607 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		64CE3F589B53D0EE09EE97DD /* Pods-ToDoList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoList.release.xcconfig"; path = "Target Support Files/Pods-ToDoList/Pods-ToDoList.release.xcconfig"; sourceTree = "<group>"; };
 		934B9ED5EC8D442BF0B9614F /* Pods_ToDoList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToDoList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2500D5629509233B76A9527 /* Pods-ToDoList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoList.debug.xcconfig"; path = "Target Support Files/Pods-ToDoList/Pods-ToDoList.debug.xcconfig"; sourceTree = "<group>"; };
@@ -79,6 +85,8 @@
 		4C6827F02203AD4F003ACC78 /* ToDoList */ = {
 			isa = PBXGroup;
 			children = (
+				4CEE52BA2231FFFC00245607 /* README.md */,
+				4CEE52B72231FFFC00245607 /* Screenshoots */,
 				4C8CEEAE2205EA9C00690F4B /* Controller */,
 				4C8CEEAD2205EA9100690F4B /* View */,
 				4C6828032203ADFA003ACC78 /* Model */,
@@ -120,6 +128,15 @@
 				4CC56541220D235D00F10EF0 /* LoginViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		4CEE52B72231FFFC00245607 /* Screenshoots */ = {
+			isa = PBXGroup;
+			children = (
+				4CEE52B82231FFFC00245607 /* screenshot1.png */,
+				4CEE52B92231FFFC00245607 /* screenshot2.png */,
+			);
+			path = Screenshoots;
 			sourceTree = "<group>";
 		};
 		BC598564CDCD29F4F65EA96F /* Frameworks */ = {
@@ -199,10 +216,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CEE52BC2231FFFC00245607 /* screenshot2.png in Resources */,
 				4C6827FC2203AD50003ACC78 /* LaunchScreen.storyboard in Resources */,
 				4CC5653E220D12EE00F10EF0 /* GoogleService-Info.plist in Resources */,
+				4CEE52BD2231FFFC00245607 /* README.md in Resources */,
 				4C6827F92203AD50003ACC78 /* Assets.xcassets in Resources */,
 				4C6827F72203AD4F003ACC78 /* Main.storyboard in Resources */,
+				4CEE52BB2231FFFC00245607 /* screenshot1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
