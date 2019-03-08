@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4C5AE7B0223201780012035F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4C5AE7AF223201780012035F /* README.md */; };
+		4C5AE7B32232020A0012035F /* screenshot4.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C5AE7B1223202090012035F /* screenshot4.png */; };
+		4C5AE7B42232020A0012035F /* screenshot3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C5AE7B22232020A0012035F /* screenshot3.png */; };
 		4C6827F22203AD4F003ACC78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6827F12203AD4F003ACC78 /* AppDelegate.swift */; };
 		4C6827F72203AD4F003ACC78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C6827F52203AD4F003ACC78 /* Main.storyboard */; };
 		4C6827F92203AD50003ACC78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C6827F82203AD50003ACC78 /* Assets.xcassets */; };
@@ -29,6 +31,8 @@
 
 /* Begin PBXFileReference section */
 		4C5AE7AF223201780012035F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		4C5AE7B1223202090012035F /* screenshot4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screenshot4.png; sourceTree = "<group>"; };
+		4C5AE7B22232020A0012035F /* screenshot3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screenshot3.png; sourceTree = "<group>"; };
 		4C6827EE2203AD4F003ACC78 /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C6827F12203AD4F003ACC78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C6827F62203AD4F003ACC78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -134,6 +138,8 @@
 			isa = PBXGroup;
 			children = (
 				4CEE52B82231FFFC00245607 /* screenshot1.png */,
+				4C5AE7B22232020A0012035F /* screenshot3.png */,
+				4C5AE7B1223202090012035F /* screenshot4.png */,
 				4CEE52B92231FFFC00245607 /* screenshot2.png */,
 			);
 			path = Screenshoots;
@@ -219,7 +225,9 @@
 				4CEE52BC2231FFFC00245607 /* screenshot2.png in Resources */,
 				4C6827FC2203AD50003ACC78 /* LaunchScreen.storyboard in Resources */,
 				4CC5653E220D12EE00F10EF0 /* GoogleService-Info.plist in Resources */,
+				4C5AE7B42232020A0012035F /* screenshot3.png in Resources */,
 				4C5AE7B0223201780012035F /* README.md in Resources */,
+				4C5AE7B32232020A0012035F /* screenshot4.png in Resources */,
 				4C6827F92203AD50003ACC78 /* Assets.xcassets in Resources */,
 				4C6827F72203AD4F003ACC78 /* Main.storyboard in Resources */,
 				4CEE52BB2231FFFC00245607 /* screenshot1.png in Resources */,
