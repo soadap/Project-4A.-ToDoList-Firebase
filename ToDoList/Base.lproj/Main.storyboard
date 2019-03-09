@@ -68,7 +68,7 @@
                     <navigationItem key="navigationItem" title="My To-Do List" id="Xo8-xP-ulz">
                         <barButtonItem key="rightBarButtonItem" title="⚙️" id="B3t-hR-Jcs">
                             <connections>
-                                <segue destination="0NB-aO-z8y" kind="presentation" id="w2x-hX-nHE"/>
+                                <segue destination="0NB-aO-z8y" kind="presentation" id="Xfc-BT-m9Q"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
